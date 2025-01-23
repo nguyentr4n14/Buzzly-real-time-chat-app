@@ -32,7 +32,7 @@ const Sidebar = () => {
                 {users.map((user) => (
                     <button
                         key={user._id}
-                        onClick={() => setSelectedUser()}
+                        onClick={() => setSelectedUser(user)}
                         className={`w-full p-3 flex items-center gap-3 hover:bg-base-300 transition-colors ${
                             selectedUser?._id === user._id
                                 ? 'bg-base-300 ring-1 ring-base-300'
