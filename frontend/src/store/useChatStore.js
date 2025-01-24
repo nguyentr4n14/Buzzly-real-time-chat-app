@@ -10,6 +10,17 @@ export const useChatStore = create((set, get) => ({
     isUsersLoading: false,
     isMessagesLoading: false,
 
+    // Use for logout in useAuthStore.js
+    resetChatState: () => {
+        set({
+            messages: [],
+            users: [],
+            selectedUser: null,
+            isUsersLoading: false,
+            isMessagesLoading: false,
+        })
+    },
+
     getUsers: async () => {
         set({ isUsersLoading: true })
         try {
