@@ -22,30 +22,14 @@ io.on("connection", (socket) => {
     console.log("A user connected", socket.id)
 
     const userId = socket.handshake.query.userId
+    if (userId) userSocketMap[userId] = socket.id
 
-    if (userId) {
-        if (!userSocketMap[userId]) {
-            userSocketMap[userId] = new Set()
-        }
-        userSocketMap[userId].add(socket.id)
-    }
-
-    // Emit updated online users to all clients
+    // io.emit() is used to send events to all the connected clients
     io.emit("getOnlineUsers", Object.keys(userSocketMap))
 
     socket.on("disconnect", () => {
         console.log("A user disconnected", socket.id)
-
-        if (userId && userSocketMap[userId]) {
-            userSocketMap[userId].delete(socket.id)
-
-            // If no sockets are left for the user, remove them from the map
-            if (userSocketMap[userId].size === 0) {
-                delete userSocketMap[userId]
-            }
-        }
-
-        // Emit updated online users to all clients
+        delete userSocketMap[userId]
         io.emit("getOnlineUsers", Object.keys(userSocketMap))
     })
 })
