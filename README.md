@@ -6,6 +6,12 @@ A feature-rich real-time chat application built with the **MERN stack** (MongoDB
 
 ---
 
+## Demo
+
+🔗 **Live App**: [Buzzly-real-Time Chat App](https://real-time-chat-app-fqbd.onrender.com)
+
+---
+
 ## Features
 
 -   **Real-Time Messaging**: Instant communication powered by Socket.IO.
