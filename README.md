@@ -11,12 +11,11 @@ A feature-rich real-time chat application built with the **MERN stack** (MongoDB
 🔗 **Live App**: [Buzzly-real-Time Chat App](https://real-time-chat-app-fqbd.onrender.com)
 Please wait 50 seconds for the server to turn on instance.
 
-Test account:
-  john@email.com
-  123456
-
-  tom@email.com
-  123456
+Test accounts:
+- Email: john@email.com
+- Password: 123456
+- Email: tom@email.com
+- Password: 123456
 
 ---
 
